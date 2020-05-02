@@ -3,6 +3,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -33,5 +34,11 @@ public class SimpleTest {
         FileUtils.copyFile(source, new File("./screenshot.png"));
         System.out.println("The Screenshot is taken...");
 
+    }
+
+    @AfterTest
+    public void closeSeleniumSession() {
+        this.driver.close();
+        this.driver.quit();
     }
 }
