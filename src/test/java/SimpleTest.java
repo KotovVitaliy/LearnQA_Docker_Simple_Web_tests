@@ -23,14 +23,14 @@ public class SimpleTest {
     
     @Test
     public void simpleTest() throws Exception {
-        this.driver.get("https://ya.ru/");
+        this.driver.get("https://google.com/");
         this.takeSceenshot();
     }
 
     private void takeSceenshot() throws Exception {
         TakesScreenshot ts = (TakesScreenshot)this.driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(source, new File("./Screen.png"));
+        FileUtils.copyFile(source, new File("./screenshot.png"));
         System.out.println("The Screenshot is taken...");
 
     }
